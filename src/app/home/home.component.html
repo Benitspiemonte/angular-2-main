@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Api</a>
+        <a class="nav-link" [(ngModel)]="filter">Search</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let drink of drinks">
+      <div class="card" style="width: 18rem">
+        <img [src]="drink.strDrinkThumb" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ drink.strDrink }}</h5>
+          <p class="card-text">
+            {{ drink.strInstructions }}
+          </p>
+          <a href="/detail/{{ drink.idDrink }}" class="btn btn-primary"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let item of letters">
+  <a href="/home/{{ item }} ">{{ item }}-</a>
+</div>
+
+
